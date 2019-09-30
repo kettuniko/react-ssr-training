@@ -1,3 +1,5 @@
+import React from 'react'
+
 const words = [
   'heirloom',
   'lefta',
@@ -10,10 +12,10 @@ const words = [
   'engraft-parakeet',
 ]
 
-const WordList = () => `
-<ul>
-  ${words.map(word => `<li>${word}</li>`).join('')}
-</ul>
-`
+const WordList = () => (
+  <ul>
+    {words.map(word => <li key={word}>{word}</li>)}
+  </ul>
+)
 
 export default WordList

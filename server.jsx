@@ -1,6 +1,8 @@
 import http from 'http'
 import express from 'express'
-import WordList from './WordList.js'
+import React from 'react'
+import ReactDOM from 'react-dom/server'
+import WordList from './WordList.jsx'
 
 const port = 3000
 const app = express()
@@ -10,7 +12,7 @@ app.get('/', (_, res) => res.send(`
 <html>
   <body>
     <div>
-      ${WordList()}
+      ${ReactDOM.renderToString(<WordList/>)}
     </div>
   </body>
 </html>
