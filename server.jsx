@@ -8,12 +8,13 @@ const port = 3000
 const app = express()
 const server = http.createServer(app)
 
+app.use('/dist', express.static('dist'))
+
 app.get('/', (_, res) => res.send(`
 <html>
   <body>
-    <div>
-      ${ReactDOM.renderToString(<WordList/>)}
-    </div>
+    <div id="root">${ReactDOM.renderToString(<WordList/>)}</div>
+    <script src="/dist/bundle.js"></script>
   </body>
 </html>
 `.trim()))
