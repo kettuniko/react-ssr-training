@@ -1,0 +1,18 @@
+{
+  "name": "react-ssr-training",
+  "version": "1.0.0",
+  "description": "React SSR training",
+  "main": "server.js",
+  "author": "Niko Kettunen <niko.kettunen@reaktor.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js"
+  }
+}
