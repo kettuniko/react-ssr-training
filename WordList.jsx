@@ -15,6 +15,7 @@ const words = [
 const WordList = () => (
   <ul>
     {words.map(word => <li onClick={() => window.alert(word)} key={word}>{word}</li>)}
+    <p>{window.navigator.userAgent}</p>
   </ul>
 )
 
