@@ -14,7 +14,7 @@ const words = [
 
 const WordList = () => (
   <ul>
-    {words.map(word => <li key={word}>{word}</li>)}
+    {words.map(word => <li onClick={() => window.alert(word)} key={word}>{word}</li>)}
   </ul>
 )
 
