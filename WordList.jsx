@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 
-const words = [
-  'heirloom',
-  'lefta',
-  'pants',
-  'agape',
-  'yield',
-  'middling',
-  'slope',
-  'catch',
-  'engraft-parakeet',
-]
-
-const WordList = () => {
+const WordList = ({ words }) => {
   const [userAgent, setUserAgent] = useState(undefined)
 
   useEffect(() => setUserAgent(window.navigator.userAgent), [])
@@ -25,4 +14,4 @@ const WordList = () => {
   )
 }
 
-export default WordList
+export default connect(({ words }) => ({ words }))(WordList)
