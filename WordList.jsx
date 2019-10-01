@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const words = [
   'heirloom',
@@ -12,11 +12,17 @@ const words = [
   'engraft-parakeet',
 ]
 
-const WordList = () => (
-  <ul>
-    {words.map(word => <li onClick={() => window.alert(word)} key={word}>{word}</li>)}
-    <p>{window.navigator.userAgent}</p>
-  </ul>
-)
+const WordList = () => {
+  const [userAgent, setUserAgent] = useState(undefined)
+
+  useEffect(() => setUserAgent(window.navigator.userAgent), [])
+
+  return (
+    <ul>
+      {words.map(word => <li onClick={() => window.alert(word)} key={word}>{word}</li>)}
+      <p>{userAgent}</p>
+    </ul>
+  )
+}
 
 export default WordList
